@@ -1,37 +1,39 @@
 import { createApp } from 'vue'
 // import Vue from 'vue'
 import App from './App.vue'
-// import Router from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// import Home from '@/components/Home'
-// import Login from '@/components/Login'
-// import BMI from '@/components/BMI'
+import Home from '@/components/Home'
+import Login from '@/components/Login'
+import BMI from '@/components/BMI'
+const routes = [
+    {
+        path: "/",
+        name: "Home",
+        component: Home
+    },
+    {
+        path: "/",
+        name: "Login",
+        component: Login
+    },
+    {
+        path: "/",
+        name: "BMI",
+        component: BMI
+    }
+]
 
-// Vue.use(Router);
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes: routes, 
+  })  
 
-// const router = new Router({
-//     mode: "history",
+    
+const app = createApp(App);
+app.use(router)
+app.mount('#app');
 
-//     routers: [
-//         {
-//             path: "/",
-//             name: "Home",
-//             component: Home
-//         },
-//         {
-//             path: "/",
-//             name: "Login",
-//             component: Login
-//         },
-//         {
-//             path: "/",
-//             name: "BMI",
-//             component: BMI
-//         }
-//     ]
-// });
-
-createApp(App).mount('#app')

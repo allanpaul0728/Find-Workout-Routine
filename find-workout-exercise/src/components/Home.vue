@@ -1,5 +1,7 @@
 <template>
-    <div class="loginForm">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-4">
+      <div class="loginForm">
       <div class="pt-4 me-5 mx-5 text-left">
         <label class="form-label">Full Name</label>
         <input type="email" class="form-control" v-model="fullname">
@@ -97,10 +99,14 @@
           </label>
         </div>
       </div>
-      <div class="mt-3 mx-5 text-left">
-        <button v-on:click="submit" class="btn btn-secondary btn-lg">Submit</button>
+      <div class="pb-3 mt-3 mx-5 text-left">
+        <button v-on:click="submit" class="btn btn-secondary btn-md">Submit</button>
       </div>
     </div>
+      </div>
+      </div>
+  
+    
 </template>
 
 <script>
@@ -117,13 +123,28 @@ export default {
 
 .loginForm {
   background-color: hsla(44,30%,47%,.60);
-  height: 95%;
-  width: 30%;
+  /* height: 95%;
+  width: 30%; */
   /* margin-top: 20px;
   margin-left: 25px; */
   margin: auto;
   border-radius: 25px;
 }
+
+/* div {
+  display: block;
+} */
+
+/* @media (min-width: 280px) {
+  .loginForm {
+    background-color: hsla(44,30%,47%,.75);
+    height: 90%;
+    width: 25%;
+    margin: auto;
+    border-radius: 25px;
+  }
+} */
+
 /* h3 {
   margin: 40px 0 0;
 } */

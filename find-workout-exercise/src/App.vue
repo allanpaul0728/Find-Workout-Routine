@@ -30,7 +30,7 @@
     </section>
     <div class="container-fluid">
       <Home v-if="page === 'home'"/>
-      <Login v-if="page === 'Login'" v-on:login-page="changePage('login')"/>
+      <Login v-if="page === 'Login'"/>
       <BMI v-if="page ==='bmi'"/>
     </div>
   </div>
@@ -75,27 +75,8 @@ export default {
   margin-top: 60px; */
 }
 
-.loginForm {
-  background-color: hsla(44,30%,47%,.60);
-  height: 90%;
-  width: 30%;
-  /* margin-top: 20px;
-  margin-left: 25px; */
-  margin: auto;
-  border-radius: 25px;
-}
-
 div {
   display: block;
 }
 
-/* @media (min-width: 280px) {
-  .loginForm {
-    background-color: hsla(44,30%,47%,.75);
-    height: 90%;
-    width: 25%;
-    margin: auto;
-    border-radius: 25px;
-  }
-} */
 </style>
