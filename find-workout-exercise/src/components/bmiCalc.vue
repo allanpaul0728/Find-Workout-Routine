@@ -21,13 +21,13 @@
                 <div class="pt-4 me-5 mx-5 text-left">
                     <label class="form-label">Unit</label>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" v-model="unit">
+                    <input class="form-check-input" type="radio" value="us" name="flexRadioDefault" id="flexRadioDefault3" v-model="unit">
                     <label class="form-check-label" for="flexRadioDefault3">
                         US
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" v-model="unit">
+                    <input class="form-check-input" type="radio" value="metric" name="flexRadioDefault" id="flexRadioDefault4" v-model="unit">
                     <label class="form-check-label" for="flexRadioDefault4">
                         Metric
                     </label>
@@ -56,12 +56,14 @@
 <script>
 
 export default {
-    name: "App",
+    name: "bmiCalc",
     data: function() {
         return {
             username: "",
             age:"",
             gender: "male",
+            weight: "",
+            height: "",
             bmi: 0,
             unit: "metric",
         };
@@ -70,11 +72,23 @@ export default {
         BMIresult() {
             if (this.unit === "metric") {
                 this.bmi = this.weight / this.height ** 2;
+                if (this.bmi < 15.5) {
+                    return this.bmi.toFixed(2) + 'underweight';
+                } else if (this.bmi < 18.5) {
+                    return this.bmi.toFixed(2) + 'slightly underweight';
+                }
             } else {
                 this.bmi = (this.weight * 703) / this.height ** 2;
             }
         },
     },
+    // computed: {
+    //     bmiComputation: function() {
+    //         let weight = parseInt(this.weight);
+    //         let height = parseInt(this.height) / 100;
+    //         let bmi = weight / (height * height)
+    //     }
+    // }
 };
 
 </script>

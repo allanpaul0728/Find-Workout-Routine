@@ -100,21 +100,43 @@
         </div>
       </div>
       <div class="pb-3 mt-3 mx-5 text-left">
-        <button v-on:click="submit" class="btn btn-secondary btn-md">Submit</button>
+        <button v-on:click="exercisePage('fitness')" class="btn btn-secondary btn-md">Submit</button>
       </div>
     </div>
       </div>
+      </div>
+      <div>
+        <fitnessExer v-if="page ==='fitness'"/>
       </div>
   
     
 </template>
 
 <script>
+import fitnessExer from './fitnessExer'
+
 export default {
-  name: 'HelloWorld',
-  // props: {
-  //   msg: String
-  // }
+  name: 'homeView',
+  data: function() {
+    return {
+      page: "home",
+      fullname: "",
+      emailaddress: "",
+      username: "",
+      gender: "male",
+      fitnessgoal: "",
+      difficulty: "",
+      program: "",
+    };
+  },
+  components: {
+    fitnessExer,
+  },
+  methods: {
+    exercisePage(newPage) {
+      this.page = newPage;
+    }
+  }
 }
 </script>
 

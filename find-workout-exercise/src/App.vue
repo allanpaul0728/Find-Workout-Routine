@@ -11,7 +11,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" v-on:click="changePage('home')">Home</a>
+                <a class="nav-link active" aria-current="homepage" href="#" v-on:click="changePage('home')">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#" v-on:click="changePage('login')">Login</a>
@@ -27,19 +27,22 @@
           </div>
         </div>
       </nav>
+      <div><fitnessExer v-if="page ==='fitness'"/></div>
     </section>
     <div class="container-fluid">
-      <Home v-if="page === 'home'"/>
-      <Login v-if="page === 'Login'"/>
-      <BMI v-if="page ==='bmi'"/>
+      <homeView v-if="page === 'home'"/>
+      <loginView v-if="page === 'login'"/>
+      <bmiCalc v-if="page ==='bmi'"/>
+      <!-- <fitnessExer v-if="page ==='fitness'"/> -->
     </div>
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue';
-import Login from './components/Login.vue';
-import BMI from './components/BMI.vue';
+import homeView from './components/homeView'
+import loginView from './components/loginView'
+import bmiCalc from './components/bmiCalc'
+import fitnessExer from './components/fitnessExer'
 
 export default {
   name: 'App',
@@ -49,9 +52,10 @@ export default {
     };
   },
   components: {
-    Home,
-    Login,
-    BMI,
+    homeView,
+    loginView,
+    bmiCalc,
+    fitnessExer,
   },
   methods: {
     changePage(newPage) {

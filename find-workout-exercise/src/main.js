@@ -2,28 +2,32 @@ import { createApp } from 'vue'
 // import Vue from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+// import store from './store'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Home from '@/components/Home'
-import Login from '@/components/Login'
-import BMI from '@/components/BMI'
+import homeView from '@/components/homeView'
+import loginView from '@/components/loginView'
+import bmiCalc from '@/components/bmiCalc'
+
 const routes = [
     {
         path: "/",
-        name: "Home",
-        component: Home
+        name: "home",
+        component: homeView
     },
     {
         path: "/",
-        name: "Login",
-        component: Login
+        name: "login",
+        component: loginView
     },
     {
         path: "/",
-        name: "BMI",
-        component: BMI
+        name: "bmi",
+        component: bmiCalc
     }
 ]
 
@@ -35,5 +39,7 @@ const router = createRouter({
     
 const app = createApp(App);
 app.use(router)
+app.use(VueAxios, axios)
+app.provide('axios', app.config.globalProperties.axios)
 app.mount('#app');
 
