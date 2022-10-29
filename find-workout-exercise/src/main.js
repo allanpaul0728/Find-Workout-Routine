@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 // import Vue from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-// import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
@@ -12,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import homeView from '@/components/homeView'
 import loginView from '@/components/loginView'
 import bmiCalc from '@/components/bmiCalc'
+
+// import store from './store'
 
 const routes = [
     {
@@ -34,7 +35,8 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes: routes, 
-  })  
+    // store: store,
+  })
 
     
 const app = createApp(App);
