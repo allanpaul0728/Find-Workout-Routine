@@ -33,6 +33,7 @@
       <homeView v-if="page === 'home'"/>
       <loginView v-if="page === 'login'"/>
       <bmiCalc v-if="page ==='bmi'"/>
+      <bmiMetric v-if="page === 'bmiMetric'"/>
       <!-- <fitnessExer v-if="page ==='fitness'"/> -->
     </div>
   </div>
@@ -43,6 +44,7 @@ import homeView from './components/homeView'
 import loginView from './components/loginView'
 import bmiCalc from './components/bmiCalc'
 import fitnessExer from './components/fitnessExer'
+import bmiMetric from './components/bmiMetric'
 
 export default {
   name: 'App',
@@ -56,6 +58,7 @@ export default {
     loginView,
     bmiCalc,
     fitnessExer,
+    bmiMetric,
   },
   methods: {
     changePage(newPage) {

@@ -1603,5 +1603,9 @@ export default new Vuex.Store({
                 muscle_term: nWorkout.muscle_term,
             })
         }
+    },
+    actions: {},
+    modules: {
+        
     }
 })

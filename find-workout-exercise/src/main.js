@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import homeView from '@/components/homeView'
 import loginView from '@/components/loginView'
 import bmiCalc from '@/components/bmiCalc'
+import bmiMetric from '@/components/bmiMetric'
+import bmiUS from '@/components/bmiUS'
 
 // import store from './store'
 
@@ -29,6 +31,16 @@ const routes = [
         path: "/",
         name: "bmi",
         component: bmiCalc
+    },
+    {
+        path: "/metric",
+        name: "bmiMetric",
+        component: bmiMetric
+    },
+    {
+        path: "/USunit",
+        name: "bmiUS",
+        component: bmiUS
     }
 ]
 
