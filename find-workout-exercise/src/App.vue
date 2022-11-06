@@ -27,7 +27,7 @@
           </div>
         </div>
       </nav>
-      <div><fitnessExer v-if="page ==='fitness'"/></div>
+      <div><workoutsProg v-if="page ==='fitness'"/></div>
     </section>
     <div class="container-fluid">
       <homeView v-if="page === 'home'"/>
@@ -43,7 +43,7 @@
 import homeView from './components/homeView'
 import loginView from './components/loginView'
 import bmiCalc from './components/bmiCalc'
-import fitnessExer from './components/fitnessExer'
+import workoutsProg from './components/workoutsProg'
 import bmiMetric from './components/bmiMetric'
 
 export default {
@@ -57,7 +57,7 @@ export default {
     homeView,
     loginView,
     bmiCalc,
-    fitnessExer,
+    workoutsProg,
     bmiMetric,
   },
   methods: {
@@ -80,10 +80,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
-}
-
-div {
-  display: block;
 }
 
 </style>

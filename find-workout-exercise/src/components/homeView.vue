@@ -51,49 +51,49 @@
       <div class="mt-2 mx-5 text-left">
         <label class="form-label">Program</label>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" v-on:check="muscle" value="muscle" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Chest
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Shoulder
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Back
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Biceps
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Triceps
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckChecked">
           <label class="form-check-label" for="flexCheckDefault">
             Legs
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckChecked">
           <label class="form-check-label" for="flexCheckDefault">
             Forearm
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+          <input class="form-check-input" type="checkbox" value="muscle" id="flexCheckChecked">
           <label class="form-check-label" for="flexCheckDefault">
             Abdominal
           </label>
@@ -106,14 +106,14 @@
       </div>
       </div>
       <div>
-        <fitnessExer v-if="page ==='fitness'"/>
+        <workoutsProg v-if="page ==='workoutsProg'"/>
       </div>
   
     
 </template>
 
 <script>
-import fitnessExer from './fitnessExer'
+import workoutsProg from './workoutsProg'
 
 export default {
   name: 'homeView',
@@ -130,7 +130,7 @@ export default {
     };
   },
   components: {
-    fitnessExer,
+    workoutsProg,
   },
   methods: {
     exercisePage(newPage) {

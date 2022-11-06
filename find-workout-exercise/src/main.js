@@ -13,8 +13,8 @@ import loginView from '@/components/loginView'
 import bmiCalc from '@/components/bmiCalc'
 import bmiMetric from '@/components/bmiMetric'
 import bmiUS from '@/components/bmiUS'
+import workoutsProg from '@/components/workoutsProg'
 
-// import store from './store'
 
 const routes = [
     {
@@ -41,13 +41,17 @@ const routes = [
         path: "/USunit",
         name: "bmiUS",
         component: bmiUS
+    },
+    {
+        path: "/muscle",
+        name: "muscle",
+        components: workoutsProg
     }
 ]
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes: routes, 
-    // store: store,
+    routes: routes,
   })
 
     

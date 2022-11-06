@@ -1,9 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createApp } from 'vue'
+import { createStore } from 'vuex'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+const store = createStore({
     state: {
         workouts: [
             {
@@ -1606,6 +1604,10 @@ export default new Vuex.Store({
     },
     actions: {},
     modules: {
-        
+
     }
-})
+});
+
+const app = createApp({})
+
+app.use(store)
